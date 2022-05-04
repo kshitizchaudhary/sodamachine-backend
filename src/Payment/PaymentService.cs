@@ -44,6 +44,7 @@ namespace Payment
 
             var debitAmount = amount ?? payment.Amount;
             var debitPayment = AddPayment(payment.PaymentType, debitAmount * -1, true, paymentId);
+            _logger.LogInformation($"Debit Payment added. Id={debitPayment.Id} Payment Type={debitPayment.PaymentType}, Amount={debitPayment.Amount}");
             return debitPayment;
         }
 

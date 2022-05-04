@@ -39,6 +39,8 @@ namespace OrderManagement
 
             UpdateOrder(order);
 
+            _logger.LogInformation($"Order created with Id={order.Id}, CreditAmount={order.CreditAmount}");
+
             return order;
         }
 
@@ -87,6 +89,7 @@ namespace OrderManagement
                 }
 
                 UpdateOrder(order);
+                _logger.LogInformation($"Credit returned for Order Id {order.Id}");
                 return;
             }
 
